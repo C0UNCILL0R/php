@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Litery w React 18</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="container"></div>
+
+  <script type="text/babel">
+    // komponent funkcyjny Letter
+    function Letter({ bgcolor, children }) {
+      const letterStyle = {
+        padding: 10,
+        margin: 10,
+        backgroundColor: bgcolor,
+        color: "#333",
+        display: "inline-block",
+        fontFamily: "monospace",
+        fontSize: 32,
+        textAlign: "center"
+      };
+
+      return <div style={letterStyle}>{children}</div>;
+    }
+
+    // główny render w React 18
+    const root = ReactDOM.createRoot(document.getElementById("container"));
+    root.render(
+      <div>
+        <Letter bgcolor="#58B3FF">S</Letter>
+        <Letter bgcolor="#FF605F">2</Letter>
+        <Letter bgcolor="#FFD52E">A</Letter>
+        <Letter bgcolor="#49DD8E">Ę</Letter>
+        <Letter bgcolor="#AE99FF">C</Letter>
+      </div>
+    );
+  </script>
+</body>
+</html>
